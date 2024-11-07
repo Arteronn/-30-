@@ -15,8 +15,7 @@ class N_S:
 	size = 0
 A = []
 types = []
-top_10 = [N_S()]
-top_10[0].size = 0
+top_10 = []
 preses = []
 vids = []
 d = 0
@@ -32,20 +31,16 @@ for i in open("files.csv", "r"):
 for i in A:
 	if i.ftype not in types:
 		types.append(i.ftype)
-	for j in range(len(top_10)):
-		if i.size >= top_10[j].size:
-			if len(top_10) > 10:
-				top_10[j].size = i.size
-				top_10[j].name = i.name
-			else:
-				top_10.append(N_S())
-				top_10[-1].size = i.size
-				top_10[-1].name = i.name
-		break
 	if i.ftype == "презентация" and i.access == "ограничен" and i.edited.split(".")[2] == "2012":
 		preses.append(i.name)
 	if i.ftype == "видео" and i.size > 102400 and i.created.split(".")[2] == "2011" and int(i.created.split(".")[1]) > 6:
 		vids.append(i)
+for i in range(10):
+	for j in range(len(A) - 1):
+		if A[j].size > A[j+1].size:
+			A[j], A[j+1] = A[j+1], A[j]
+	top_10.append(N_S())
+	top_10[i] = A[-i]
 for i in range(len(top_10)):
 	top_10[i] = str(top_10[i].name)
 top_10 = sorted(top_10)
@@ -62,7 +57,7 @@ for i in types:
 print("10 самых больших файлов:")
 for i in top_10:
 	for j in A:
-		if i == j.name:
+		if i.name == j.name:
 			print(j.name, ": ", j.size, sep="")
 print("Презентации с ограниченным доступом:")
 for i in preses:
