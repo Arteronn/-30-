@@ -184,13 +184,10 @@
 		# ~ bigguy = i
 # ~ for i in range(len(A)-2):
 	# ~ thr = 0
-	# ~ tri = 0
+	# ~ tri = 2
 	# ~ for j in range(3):
-		# ~ if abs(A[i+j]) % 100 == 43:
+		# ~ if abs(A[i+j]) % 100 == 43 and abs(A[i+j]) > 9999 and abs(A[i+j]) < 100000:
 			# ~ thr += 1
-	# ~ for j in range(3):
-		# ~ if abs(A[i+j]) > 9999 and abs(A[i+j]) < 100000:
-			# ~ tri += 1
 	# ~ if thr > 0 and tri > 0 and A[i] ** 2 + A[i+1] ** 2 + A[i+2] ** 2 < bigguy ** 2:
 		# ~ t += 1
 		# ~ if A[i] ** 2 + A[i+1] ** 2 + A[i+2] ** 2 < minsum:
