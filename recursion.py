@@ -21,17 +21,17 @@ from functools import lru_cache
 # ~ print((F(2026) - 5 * F(2024)) / F(2022))
 
 
-def F(n):
-	if n % 2 == 0:
-		return F(n / 2) + 3
-	elif  n % 3 == 0:
-		return F(n / 3) + 2
-	else:
-		return 0
-for i in range(1, 2050):
-	if F(i) == 65:
-		print(i)
-		break
+# ~ def F(n):
+	# ~ if n % 2 == 0:
+		# ~ return F(n / 2) + 3
+	# ~ elif  n % 3 == 0:
+		# ~ return F(n / 3) + 2
+	# ~ else:
+		# ~ return 0
+# ~ for i in range(1, 9999999):
+	# ~ if F(i) == 65:
+		# ~ print(i)
+		# ~ break
 
 
 # ~ def F(n):
@@ -41,7 +41,7 @@ for i in range(1, 2050):
 		# ~ return F(n / 3) + 4
 	# ~ else:
 		# ~ return 0
-# ~ for i in range(1, 2050):
+# ~ for i in range(1, 9999999):
 	# ~ if F(i) == 108:
 		# ~ print(i)
 		# ~ break
@@ -54,7 +54,7 @@ for i in range(1, 2050):
 		# ~ return F(n / 5) + 2
 	# ~ else:
 		# ~ return 0
-# ~ for i in range(1, 2050):
+# ~ for i in range(1, 9999999):
 	# ~ if F(i) == 130:
 		# ~ print(i)
 		# ~ break
@@ -67,7 +67,10 @@ for i in range(1, 2050):
 		# ~ return F(n / 5) + 2
 	# ~ else:
 		# ~ return 0
-# ~ for i in range(1, 2050):
-	# ~ if F(i) == 130:
-		# ~ print(i)
-		# ~ break
+# ~ A = []
+# ~ t = 0
+# ~ for i in range(1, 1000001):
+# ~		if not(F(i) in A):
+# ~			A.append(F(i))
+# ~ 		t += 1
+# ~ print(t)
