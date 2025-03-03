@@ -1,0 +1,21 @@
+body {
+  color: white;
+  background: green;
+}
+h1 {
+ color: red
+}
+h2 {
+color: blue	
+}
+.formula {
+ font-style: italic;
+text-align: center;
+font-weight: bold;
+}
+.definition {
+border: 1px solid red;
+padding: 5px;
+
+}
+
